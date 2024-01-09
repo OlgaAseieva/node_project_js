@@ -19,38 +19,39 @@ import { reject } from "lodash-es";
 // console.log(str);
 
 
-// async function fetchData() {
-//     const response = await fetch('https://api.example.com/data');
-//     const data = await response.json();
-//     return data;
-// }
 
-// fetchData()
-
-
-//     .then((data) => console.log(data));
-//     .catch((error) => console.error(error));
-
-
-
-let checkWeather = new Promise ((resolve, reject) => {
-    setTimeout (() => {
-        if (Math.random () > 0.5) {
-            resolve ("Sunny");
-        } else {
-            reject (" Faild to get weather data");
-        }
-    }, 2000)
-});
-async function getWeather () {
+const fetchData = async () => {
     try {
-        let weather = await checkWeather;
-        console.log(`Weather is ${weather}`);
-
+    const response = await fetch('https://example.com/api/data');
+    const data = await response.json();
+    console.log(data);
     } catch (error) {
-        console.log(`Error ${error}`);
-
+    console.error('Error fetching data:', error);
     }
-};
+    };
+    
+    fetchData();
 
-getWeather();
+
+
+// let checkWeather = new Promise ((resolve, reject) => {
+//     setTimeout (() => {
+//         if (Math.random () > 0.5) {
+//             resolve ("Sunny");
+//         } else {
+//             reject (" Faild to get weather data");
+//         }
+//     }, 2000)
+// });
+// async function getWeather () {
+//     try {
+//         let weather = await checkWeather;
+//         console.log(`Weather is ${weather}`);
+
+//     } catch (error) {
+//         console.log(`Error ${error}`);
+
+//     }
+// };
+
+// getWeather();
